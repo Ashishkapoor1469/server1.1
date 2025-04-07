@@ -10,6 +10,8 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
     "input-otp": "^1.4.2",
     "socket.io": "^4.8.1",
     "sonner": "^2.0.3",

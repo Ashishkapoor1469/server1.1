@@ -1,6 +1,8 @@
 const { Server } = require("socket.io");
 const { v4: uuidv4 } = require("uuid");
-
+const cors = require("cors");
+const express = require("express");
+const app = express();
 // Store connected users and rooms
 const users = [];
 const rooms = [];
@@ -15,6 +17,9 @@ const io = new Server({
   }
 });
 
+app.use(cors(io));
+
+app.get('/',(req,res)=>{res.send({activeStatus:true,error:false})});
 // Socket.io event handlers
 io.on("connection", (socket) => {
   console.log("Client connected:", socket.id);
