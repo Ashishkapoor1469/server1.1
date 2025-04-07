@@ -10,15 +10,15 @@ const messages = [];
 
 // Create Socket.io server
 const io = new Server({
-  cors: {
+  corsOption: {
     origin: ["http://localhost:3000","https://chatapp3-tau.vercel.app","https://chatmoke.netlify.app"],
     methods: ["GET", "POST"],
     credentials: true
   }
 });
 
-app.use(cors(io));
-app.use(cors(io));
+app.use(cors(Server.corsOption));
+
 
 app.get('/',(req,res)=>{res.send({activeStatus:true,error:false})});
 // Socket.io event handlers
