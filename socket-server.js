@@ -18,6 +18,7 @@ const io = new Server({
 });
 
 app.use(cors(io));
+app.use(cors(io));
 
 app.get('/',(req,res)=>{res.send({activeStatus:true,error:false})});
 // Socket.io event handlers
